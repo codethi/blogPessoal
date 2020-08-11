@@ -1,0 +1,44 @@
+<div class="container">
+
+  <div class="row mt-5 mb-5">
+      <div class="col-md-4">
+       <app-perfil-lateral></app-perfil-lateral>
+      </div>
+      <div class="col-md-8">
+        <div class="card mt-5">
+           <div class="card-header">
+               <div class="row d-flex align-items-center">
+                   <div class="col-md-8">
+                       <h5 class="card-title">{{postagem.titulo}} </h5>
+                       <small>Tema: {{postagem.tema.descricao}}</small>
+                   </div>
+                   <div class="col-md-4 d-flex justify-content-end">
+                   </div>
+               </div>
+           </div>
+
+           <div class="card-body" >
+             <p class="card-text" aria-describedby="texto">{{postagem.texto}} </p>
+             <small id="texto" class="form-text m-0 text-muted mb-3">
+               Postado em {{ postagem.data | date:'dd/MM/yyyy'}} às {{postagem.data | date:'HH:mm'}}</small>
+           </div>
+        </div>
+
+        <hr class="mt-4 mb-4">
+
+        <h5 class="text-center">Tem certeza que deseja apagar essa postagem?</h5>
+        <div class="d-flex justify-content-center mt-5">
+           <button class="btn btn-outline-success mr-3" (click)="btnSim()">Sim</button>
+           <button class="btn btn-outline-danger" (click)="btnNao()" >Não</button>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
