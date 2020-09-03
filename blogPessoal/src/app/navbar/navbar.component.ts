@@ -14,12 +14,25 @@ export class NavbarComponent implements OnInit {
     public auth: AuthService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.scroll()
   }
 
   sair() {
     this.router.navigate(['/login'])
     localStorage.clear()
+  }
+
+  scroll () {
+    window.onscroll = () => {
+      let navbar = document.querySelector('nav')
+
+      if (window.pageYOffset == 0) {
+        navbar.style.backgroundColor = 'transparent'
+      } else {
+        navbar.style.backgroundColor = 'white'
+      }
+    }
   }
 
 }
