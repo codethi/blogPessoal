@@ -284,8 +284,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/delete-tema/delete-tema.component.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/delete-tema/delete-tema.component.ts:49</a></div>
                 </td>
             </tr>
 
@@ -529,10 +529,16 @@ export class DeleteTemaComponent implements OnInit {
   }
 
   btnSim() {
-    this.temaService.deleteTema(this.tema.id).subscribe(() &#x3D;&gt; {
+    if (this.tema.postagem.length !&#x3D; 0) {
+      this.alerta.showAlertDanger(&#x27;Esse tema não pode ser modificado, pois já pertence a uma postagem.&#x27;)
       this.router.navigate([&#x27;/cadastro-tema&#x27;])
-      this.alerta.showAlertSuccess(&#x27;Tema apagado com sucesso!&#x27;)
-    })
+    } else {
+      this.temaService.deleteTema(this.tema.id).subscribe(() &#x3D;&gt; {
+        this.router.navigate([&#x27;/cadastro-tema&#x27;])
+        this.alerta.showAlertSuccess(&#x27;Tema apagado com sucesso!&#x27;)
+      })
+    }
+
   }
 
   btnNao() {

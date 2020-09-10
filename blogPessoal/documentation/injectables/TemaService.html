@@ -624,11 +624,11 @@ export class TemaService {
   }
 
   getAllTemas() {
-    return this.http.get(&#x27;http://localhost:8080/tema&#x27;, this.token)
+    return this.http.get(&#x27;http://localhost:9000/tema&#x27;, this.token)
   }
 
   getByIdTema(id: number) {
-    return this.http.get(&#x60;http://localhost:8080/tema/${id}&#x60;, this.token)
+    return this.http.get(&#x60;http://localhost:9000/tema/${id}&#x60;, this.token)
   }
 
   postTema(tema: Tema) {

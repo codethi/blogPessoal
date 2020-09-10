@@ -13,6 +13,8 @@ export class PostTemaComponent implements OnInit {
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
+  modificacao: boolean = false
+
 
   constructor(
     private temaService: TemaService,
@@ -21,12 +23,15 @@ export class PostTemaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.findAllTemas()
+  
   }
 
   findAllTemas() {
     this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
+      console.log(this.listaTemas)
     })
   }
 
@@ -48,3 +53,4 @@ export class PostTemaComponent implements OnInit {
    }
  }
 }
+

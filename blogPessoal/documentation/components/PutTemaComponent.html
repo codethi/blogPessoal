@@ -487,11 +487,16 @@ export class PutTemaComponent implements OnInit {
   }
 
   salvar() {
-    this.temaService.putTema(this.tema).subscribe((resp: Tema) &#x3D;&gt; {
-      this.tema &#x3D; resp
+    if (this.tema.postagem.length !&#x3D; 0) {
+      this.alerta.showAlertDanger(&#x27;Esse tema não pode ser modificado, pois já pertence a uma postagem.&#x27;)
       this.router.navigate([&#x27;/cadastro-tema&#x27;])
-      this.alerta.showAlertSuccess(&#x27;Tema atualizado com sucesso!&#x27;)
-    })
+    } else {
+      this.temaService.putTema(this.tema).subscribe((resp: Tema) &#x3D;&gt; {
+        this.tema &#x3D; resp
+        this.router.navigate([&#x27;/cadastro-tema&#x27;])
+        this.alerta.showAlertSuccess(&#x27;Tema atualizado com sucesso!&#x27;)
+      })
+    }
   }
 
 }

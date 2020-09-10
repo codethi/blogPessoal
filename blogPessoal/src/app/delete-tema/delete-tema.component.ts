@@ -34,10 +34,16 @@ export class DeleteTemaComponent implements OnInit {
   }
 
   btnSim() {
-    this.temaService.deleteTema(this.tema.id).subscribe(() => {
+    if (this.tema.postagem.length != 0) {
+      this.alerta.showAlertDanger('Esse tema não pode ser modificado, pois já pertence a uma postagem.')
       this.router.navigate(['/cadastro-tema'])
-      this.alerta.showAlertSuccess('Tema apagado com sucesso!')
-    })
+    } else {
+      this.temaService.deleteTema(this.tema.id).subscribe(() => {
+        this.router.navigate(['/cadastro-tema'])
+        this.alerta.showAlertSuccess('Tema apagado com sucesso!')
+      })
+    }
+
   }
 
   btnNao() {

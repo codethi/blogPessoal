@@ -37,10 +37,12 @@
           <tr *ngFor='let item of listaTemas'>
             <th scope="row">{{item.id}}</th>
             <td>{{item.descricao}}</td>
-            <td class="d-flex justify-content-end">
-              <a class="btn btn-outline-info mr-3" [routerLink]="['/editar-tema', item.id]" >Editar</a>
-              <a class="btn btn-outline-danger" [routerLink]="['/delete-tema', item.id]" >Apagar</a>
-            </td>
+              <td class="d-flex justify-content-end">
+                <a class="btn btn-outline-info mr-3" [routerLink]="['/editar-tema', item.id]" >Editar</a>
+                <a class="btn btn-outline-danger" [routerLink]="['/delete-tema', item.id]" >Apagar</a>
+              </td>
+
+
           </tr>
 
         </tbody>

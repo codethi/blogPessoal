@@ -624,11 +624,11 @@ export class PostagemService {
   }
 
   getAllPostagens() {
-    return this.http.get(&#x27;http://localhost:8080/postagens&#x27;, this.token)
+    return this.http.get(&#x27;http://localhost:9000/postagens&#x27;, this.token)
   }
 
   getByIdPostagem(id: number) {
-    return this.http.get(&#x60;http://localhost:8080/postagens/${id}&#x60;, this.token)
+    return this.http.get(&#x60;http://localhost:9000/postagens/${id}&#x60;, this.token)
   }
 
   postPostagem(postagem: Postagem) {

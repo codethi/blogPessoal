@@ -428,7 +428,7 @@ export class AlertasComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;alert alert-{{type}} m-0 alert-dismissible fade show&quot; role&#x3D;&quot;alert&quot;&gt;
   {{message}}
-  &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;alert&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+  &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;alert&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&#x27;onClose()&#x27;&gt;
     &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
   &lt;/button&gt;
 &lt;/div&gt;
@@ -467,7 +467,7 @@ export class AlertasComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="alert alert-{{type}} m-0 alert-dismissible fade show" role="alert">  {{message}}  <button type="button" class="close" data-dismiss="alert" aria-label="Close">    <span aria-hidden="true">&times;</span>  </button></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="alert alert-{{type}} m-0 alert-dismissible fade show" role="alert">  {{message}}  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)=\'onClose()\'>    <span aria-hidden="true">&times;</span>  </button></div></div>'
     var COMPONENTS = [{'name': 'AlertasComponent', 'selector': 'app-alertas'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CadastroComponent', 'selector': 'app-cadastro'},{'name': 'DeletePostagemComponent', 'selector': 'app-delete-postagem'},{'name': 'DeleteTemaComponent', 'selector': 'app-delete-tema'},{'name': 'FeedComponent', 'selector': 'app-feed'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PerfilLateralComponent', 'selector': 'app-perfil-lateral'},{'name': 'PostTemaComponent', 'selector': 'app-post-tema'},{'name': 'PutPostagemComponent', 'selector': 'app-put-postagem'},{'name': 'PutTemaComponent', 'selector': 'app-put-tema'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AlertasComponent'};
