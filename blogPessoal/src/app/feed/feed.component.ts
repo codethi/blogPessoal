@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { Router } from '@angular/router';
 import { AlertasService } from './../service/alertas.service';
 import { TemaService } from './../service/tema.service';
@@ -34,9 +35,9 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(){
 
-    let token = localStorage.getItem('token')
+    let token = environment.token
 
-    if(token == null) {
+    if(token == '') {
       this.router.navigate(['/login'])
       this.alerta.showAlertInfo('Faça o login antes de entrar no feed...')
     }

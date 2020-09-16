@@ -173,7 +173,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/login/login.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/login/login.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -254,8 +254,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/login/login.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/login/login.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -293,8 +293,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/login/login.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/login/login.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -341,7 +341,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/login/login.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/login/login.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -354,7 +354,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { UserLogin } from &#x27;./../model/UserLogin&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { environment } from &#x27;./../../environments/environment.prod&#x27;;
+
+import { UserLogin } from &#x27;./../model/UserLogin&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { AuthService } from &#x27;./../service/auth.service&#x27;;
 import { Component, OnInit } from &#x27;@angular/core&#x27;;
@@ -379,7 +381,7 @@ export class LoginComponent implements OnInit {
   entrar() {
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) &#x3D;&gt; {
       this.userLogin &#x3D; resp
-      localStorage.setItem(&#x27;token&#x27;, this.userLogin.token)
+      environment.token &#x3D; this.userLogin.token
       this.router.navigate([&#x27;/feed&#x27;])
     })
   }

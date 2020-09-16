@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { AuthService } from './../service/auth.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -15,24 +16,12 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.scroll()
   }
 
   sair() {
     this.router.navigate(['/login'])
-    localStorage.clear()
+    environment.token = ''
   }
 
-  scroll () {
-    window.onscroll = () => {
-      let navbar = document.querySelector('nav')
-
-      if (window.pageYOffset == 0) {
-        navbar.style.backgroundColor = 'transparent'
-      } else {
-        navbar.style.backgroundColor = 'white'
-      }
-    }
-  }
 
 }

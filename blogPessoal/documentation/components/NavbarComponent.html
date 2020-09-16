@@ -151,9 +151,6 @@
                             <li>
                                 <a href="#sair">sair</a>
                             </li>
-                            <li>
-                                <a href="#scroll">scroll</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -177,7 +174,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/navbar/navbar.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/navbar/navbar.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -258,8 +255,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/navbar/navbar.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/navbar/navbar.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -314,45 +311,6 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="scroll"></a>
-                    <span class="name">
-                        <b>
-                            scroll
-                        </b>
-                        <a href="#scroll"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>scroll()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/navbar/navbar.component.ts:26</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>
     <section>
     
@@ -380,7 +338,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/navbar/navbar.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/navbar/navbar.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -393,7 +351,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AuthService } from &#x27;./../service/auth.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { environment } from &#x27;./../../environments/environment.prod&#x27;;
+import { AuthService } from &#x27;./../service/auth.service&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
@@ -410,25 +369,13 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.scroll()
   }
 
   sair() {
     this.router.navigate([&#x27;/login&#x27;])
-    localStorage.clear()
+    environment.token &#x3D; &#x27;&#x27;
   }
 
-  scroll () {
-    window.onscroll &#x3D; () &#x3D;&gt; {
-      let navbar &#x3D; document.querySelector(&#x27;nav&#x27;)
-
-      if (window.pageYOffset &#x3D;&#x3D; 0) {
-        navbar.style.backgroundColor &#x3D; &#x27;transparent&#x27;
-      } else {
-        navbar.style.backgroundColor &#x3D; &#x27;white&#x27;
-      }
-    }
-  }
 
 }
 </code></pre>
