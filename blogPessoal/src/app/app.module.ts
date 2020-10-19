@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
@@ -23,7 +24,8 @@ import { DeletePostagemComponent } from './delete-postagem/delete-postagem.compo
 import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
 import { AlertasComponent } from './alertas/alertas.component';
 
-import { HashLocationStrategy, LocationStrategy } from '@angular/common'
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { SafePipe } from './safe.pipe'
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common'
     PutTemaComponent,
     DeletePostagemComponent,
     DeleteTemaComponent,
-    AlertasComponent
+    AlertasComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

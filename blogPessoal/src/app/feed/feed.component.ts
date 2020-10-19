@@ -26,6 +26,8 @@ export class FeedComponent implements OnInit {
   idTema: number
   nomeTema: string
 
+
+
   constructor(
     private postagemService: PostagemService,
     private temaService: TemaService,
@@ -60,7 +62,9 @@ export class FeedComponent implements OnInit {
 
     if (this.postagem.titulo == null || this.postagem.texto == null || this.postagem.tema == null) {
       this.alerta.showAlertDanger('Preencha todos os campos antes de publicar!')
-    } else {
+    } else if (this.postagem.texto.length < 10) {
+      this.alerta.showAlertDanger('Digite no minimo 10 caracteres no campo texto!')
+    } else{
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
         this.postagem = resp
         this.postagem = new Postagem()

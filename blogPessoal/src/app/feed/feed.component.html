@@ -18,13 +18,15 @@
       <div class="form-group">
           <label class="text-monospace" for="texto">Texto:</label>
           <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui o seu texto" [(ngModel)]='postagem.texto'></textarea>
+          <small class="text-danger">*Digite no minimo 10 caracteres</small>
       </div>
 
       <div class="row d-flex align-items-end">
 
         <div class="col-md-6">
           <div class="form-group m-0">
-            <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um novo</a></label>
+            <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um novo</a>
+            </label>
             <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
               <option *ngFor='let item of listaTemas' value={{item.id}}>
                 {{item.descricao}}
